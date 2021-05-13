@@ -6,6 +6,8 @@ app.get('/', (req, res) => {
   res.send('Hello SamuelNayo!')
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server is listening on port ${process.env.PORT}`);
+const { PORT = 5000 } = process.env
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
 });
