@@ -1,16 +1,10 @@
-import "reflect-metadata";
-import express from 'express';
-import connectDB from "typeorm";
-import userRoutes from './routes/user.routes';
+import "source-map-support/register";
+import "dotenv/config";
+import app from "./server";
+import config from "./config";
 
-const app = express();
-const PORT = process.env.PORT || 5000;
-connectDB;
+const port = parseInt(config.port);
 
-
-app.use(express.json());
-app.use('/users', userRoutes);
-  
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
