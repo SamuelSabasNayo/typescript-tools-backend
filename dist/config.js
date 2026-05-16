@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const config = {
+    db: {
+        host: process.env.DB_HOST || 'localhost',
+        port: parseInt(process.env.DB_PORT || "3306"),
+        username: process.env.DB_USERNAME,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_DATABASE,
+        dialect: "mysql",
+    },
+    env: process.env.NODE_ENV || 'development',
+    port: process.env.PORT || "3000",
+};
+exports.default = config;
+//# sourceMappingURL=config.js.map
